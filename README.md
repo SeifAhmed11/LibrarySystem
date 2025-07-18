@@ -3,7 +3,7 @@
 <div align="center">
 
 ![Library API](https://img.shields.io/badge/Library-API-blue?style=for-the-badge&logo=books)
-![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-8.0-purple?style=for-the-badge&logo=.net)
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-9.0-purple?style=for-the-badge&logo=.net)
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-2022-red?style=for-the-badge&logo=microsoft-sql-server)
 ![Clean Architecture](https://img.shields.io/badge/Clean%20Architecture-✅-green?style=for-the-badge)
 
@@ -30,7 +30,33 @@ This project follows **Clean Architecture** principles with a well-structured la
 ```
 
 <div align="center">
-  <img src="https://i.imgur.com/8JZqXGp.png" alt="Clean Architecture Diagram" width="600"/>
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Clean Architecture                       │
+├─────────────────────────────────────────────────────────────┤
+│  ┌─────────────────┐  ┌─────────────────┐  ┌──────────────┐ │
+│  │   Presentation  │  │   Application   │  │   Domain     │ │
+│  │     Layer       │  │     Layer       │  │   Layer      │ │
+│  │                 │  │                 │  │              │ │
+│  │ • Controllers   │  │ • Services      │  │ • Entities   │ │
+│  │ • DTOs          │  │ • Use Cases     │  │ • Interfaces │ │
+│  │ • Middleware    │  │ • Validators    │  │ • Value Obj. │ │
+│  └─────────────────┘  └─────────────────┘  └──────────────┘ │
+│           │                     │                    │      │
+│           └─────────────────────┼────────────────────┘      │
+│                                 │                           │
+│  ┌─────────────────────────────────────────────────────────┐ │
+│  │                Infrastructure Layer                     │ │
+│  │                                                         │ │
+│  │ • Data Access (EF Core)                                 │ │
+│  │ • External Services                                     │ │
+│  │ • Configuration                                         │ │
+│  │ • Logging                                               │ │
+│  └─────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────┘
+```
+
 </div>
 
 ---
@@ -67,14 +93,36 @@ This project follows **Clean Architecture** principles with a well-structured la
 
 | Component | Technology | Version |
 |-----------|------------|---------|
-| **Framework** | ASP.NET Core | 8.0 |
+| **Framework** | ASP.NET Core | 9.0 |
 | **Database** | SQL Server | 2022 |
-| **ORM** | Entity Framework Core | 8.0 |
+| **ORM** | Entity Framework Core | 9.0 |
 | **AutoMapper** | Object Mapping | 12.0 |
 | **Swagger** | API Documentation | 6.5 |
 
 <div align="center">
-  <img src="https://i.imgur.com/QJZqXGp.png" alt="Technology Stack" width="500"/>
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Technology Stack                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │
+│  │ ASP.NET     │  │ SQL Server  │  │ Entity      │         │
+│  │ Core 9.0    │  │ 2022        │  │ Framework   │         │
+│  │             │  │             │  │ Core 9.0    │         │
+│  └─────────────┘  └─────────────┘  └─────────────┘         │
+│         │                │                │                │
+│         └────────────────┼────────────────┘                │
+│                          │                                 │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │
+│  │ AutoMapper  │  │ Swagger     │  │ Docker      │         │
+│  │ 12.0        │  │ 6.5         │  │ & Compose   │         │
+│  │             │  │             │  │             │         │
+│  └─────────────┘  └─────────────┘  └─────────────┘         │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
 </div>
 
 ---
@@ -83,13 +131,28 @@ This project follows **Clean Architecture** principles with a well-structured la
 
 Before running this application, ensure you have:
 
-- **.NET 8.0 SDK** or later
+- **.NET 9.0 SDK** or later
 - **SQL Server 2022** or later
 - **Visual Studio 2022** or **VS Code**
 - **SQL Server Management Studio** (optional)
 
 <div align="center">
-  <img src="https://i.imgur.com/9JZqXGp.png" alt="Prerequisites" width="400"/>
+
+```
+┌─────────────────────────────────────────┐
+│              Prerequisites              │
+├─────────────────────────────────────────┤
+│                                         │
+│  ✅ .NET 9.0 SDK                        │
+│  ✅ SQL Server 2022                     │
+│  ✅ Visual Studio 2022                  │
+│  ✅ Git                                 │
+│  ✅ Docker (Optional)                   │
+│  ✅ Postman (Optional)                  │
+│                                         │
+└─────────────────────────────────────────┘
+```
+
 </div>
 
 ---
@@ -126,7 +189,30 @@ dotnet run
 Navigate to: `https://localhost:7035/swagger`
 
 <div align="center">
-  <img src="https://i.imgur.com/7JZqXGp.png" alt="Swagger UI" width="700"/>
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              Swagger UI                                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  📚 Library Management System API                                          │
+│  ───────────────────────────────────────────────────────────────────────   │
+│                                                                             │
+│  🔍 Books                    [GET] /api/Books                              │
+│  📖 Authors                  [GET] /api/Authors                            │
+│  🏢 Publishers               [GET] /api/Publishers                         │
+│  📂 Categories               [GET] /api/Categories                         │
+│  📚 Shelves                  [GET] /api/Shelves                            │
+│  👥 Employees                [GET] /api/Employees                          │
+│  🏢 Floors                   [GET] /api/Floors                             │
+│  👤 Users                    [GET] /api/Users                              │
+│  🔄 BookBorrows              [GET] /api/BookBorrows                        │
+│                                                                             │
+│  🌐 Access at: https://localhost:7035/swagger                              │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
 </div>
 
 ---
@@ -558,7 +644,53 @@ GET /api/BookBorrows/daterange?startDate=2024-01-01&endDate=2024-12-31
 ## 🗄️ Database Schema
 
 <div align="center">
-  <img src="https://i.imgur.com/6JZqXGp.png" alt="Database Schema" width="800"/>
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              Database Schema                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐                     │
+│  │   Books     │    │  Authors    │    │ Publishers  │                     │
+│  │             │    │             │    │             │                     │
+│  │ • Id        │    │ • Id        │    │ • Id        │                     │
+│  │ • Title     │    │ • Name      │    │ • Name      │                     │
+│  │ • ShelfCode │    └─────────────┘    └─────────────┘                     │
+│  │ • CategoryId│           │                    │                          │
+│  │ • PublisherId│          │                    │                          │
+│  └─────────────┘           │                    │                          │
+│           │                │                    │                          │
+│           │                │                    │                          │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐                     │
+│  │ Categories  │    │ BookAuthors │    │ BookBorrows │                     │
+│  │             │    │             │    │             │                     │
+│  │ • Id        │    │ • BookId    │    │ • Id        │                     │
+│  │ • CatName   │    │ • AuthorId  │    │ • BookId    │                     │
+│  └─────────────┘    └─────────────┘    │ • UserSSN   │                     │
+│           │                            │ • EmployeeId│                     │
+│           │                            │ • DateBorrowed│                   │
+│  ┌─────────────┐    ┌─────────────┐    │ • DueDate   │                     │
+│  │   Shelves   │    │  Employees  │    │ • AmountPaid│                     │
+│  │             │    │             │    └─────────────┘                     │
+│  │ • Id        │    │ • Id        │              │                         │
+│  │ • ShelfCode │    │ • Name      │              │                         │
+│  │ • FloorId   │    │ • Email     │              │                         │
+│  └─────────────┘    │ • Phone     │              │                         │
+│           │         │ • Salary    │              │                         │
+│           │         │ • Bonus     │              │                         │
+│  ┌─────────────┐    │ • FloorId   │    ┌─────────────┐                     │
+│  │   Floors    │    └─────────────┘    │    Users    │                     │
+│  │             │              │        │             │                     │
+│  │ • Id        │              │        │ • SSN       │                     │
+│  │ • FloorNumber│             │        │ • Name      │                     │
+│  │ • NumberOfBlocks│          │        │ • Email     │                     │
+│  └─────────────┘              │        │ • Phone     │                     │
+│                               │        │ • RegisteredByEmployeeId│         │
+│                               │        └─────────────┘                     │
+│                               │                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
 </div>
 
 ### Entity Relationships
@@ -610,24 +742,6 @@ ASPNETCORE_ENVIRONMENT=Development
 
 ---
 
-## 🧪 Testing
-
-### Unit Tests
-```bash
-dotnet test
-```
-
-### Integration Tests
-```bash
-dotnet test --filter Category=Integration
-```
-
-### API Testing with Postman
-Import the provided Postman collection: `LibraryAPI.postman_collection.json`
-
-<div align="center">
-  <img src="https://i.imgur.com/5JZqXGp.png" alt="Postman Testing" width="600"/>
-</div>
 
 ---
 
@@ -645,49 +759,32 @@ The application comes with comprehensive sample data including:
 - **10 Book Borrows** with realistic scenarios
 
 <div align="center">
-  <img src="https://i.imgur.com/4JZqXGp.png" alt="Sample Data" width="500"/>
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        Sample Data                          │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  📊 Database Statistics:                                    │
+│  ───────────────────────────────────────────────────────   │
+│                                                             │
+│  🏢 Floors: 6 floors with varying block counts             │
+│  👥 Employees: 12 staff members across different floors    │
+│  👤 Users: 8 library members with realistic information    │
+│  📖 Authors: 6 authors from various genres                 │
+│  🏢 Publishers: 6 major publishing houses                  │
+│  📂 Categories: 8 different book categories                │
+│  📚 Books: 12 books with full relationships                │
+│  🔄 BookBorrows: 10 realistic borrowing scenarios          │
+│                                                             │
+│  🎯 Ready for testing and development!                     │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
 </div>
 
 ---
-
-## 🚀 Deployment
-
-### Docker Deployment
-```bash
-# Build Docker image
-docker build -t library-api .
-
-# Run container
-docker run -p 8080:80 library-api
-```
-
-### Azure Deployment
-```bash
-# Deploy to Azure App Service
-az webapp up --name library-api --resource-group myResourceGroup --runtime "DOTNETCORE:8.0"
-```
-
-### IIS Deployment
-1. Publish the application
-2. Configure IIS with .NET Core Hosting Bundle
-3. Set up application pool
-4. Configure web.config
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<div align="center">
-  <img src="https://i.imgur.com/3JZqXGp.png" alt="Contributing" width="400"/>
-</div>
 
 ---
 
@@ -701,13 +798,22 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or need support:
 
-- 📧 Email: support@libraryapi.com
-- 💬 Discord: [Library API Community](https://discord.gg/library-api)
-- 📖 Documentation: [Wiki](https://github.com/your-repo/library-api/wiki)
-- 🐛 Issues: [GitHub Issues](https://github.com/your-repo/library-api/issues)
+- 📧 Email: 1seif1ahmed1@gmail.com
 
 <div align="center">
-  <img src="https://i.imgur.com/2JZqXGp.png" alt="Support" width="300"/>
+
+```
+┌─────────────────────────────────────────┐
+│                Support                  │
+├─────────────────────────────────────────┤
+│                                         │
+│  📧 Email: 1seif1ahmed1@gmail.com       │
+│                                         │
+│  🚀 We're here to help!                 │
+│                                         │
+└─────────────────────────────────────────┘
+```
+
 </div>
 
 ---
@@ -723,10 +829,6 @@ If you have any questions or need support:
 
 <div align="center">
 
-**Made with ❤️ by the Library API Team**
-
-[![GitHub stars](https://img.shields.io/github/stars/your-repo/library-api?style=social)](https://github.com/your-repo/library-api/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/your-repo/library-api?style=social)](https://github.com/your-repo/library-api/network)
-[![GitHub issues](https://img.shields.io/github/issues/your-repo/library-api)](https://github.com/your-repo/library-api/issues)
+**Made with ❤️ by Seif Ahmed :) **
 
 </div> 
