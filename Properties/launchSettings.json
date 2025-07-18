@@ -1,0 +1,34 @@
+{
+    "profiles": {
+        "http": {
+            "commandName": "Project",
+            "launchBrowser": true,
+            "launchUrl": "swagger",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "dotnetRunMessages": true,
+            "applicationUrl": "http://localhost:5035"
+        },
+        "https": {
+            "commandName": "Project",
+            "launchBrowser": true,
+            "launchUrl": "swagger",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "dotnetRunMessages": true,
+            "applicationUrl": "https://localhost:7104;http://localhost:5035"
+        },
+        "WSL": {
+            "commandName": "WSL2",
+            "launchUrl": "https://localhost:7104",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "https://localhost:7104;http://localhost:5035"
+            },
+            "distributionName": ""
+        }
+    },
+    "$schema": "https://json.schemastore.org/launchsettings.json"
+}
