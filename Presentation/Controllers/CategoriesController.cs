@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
 using LibraryAPI.Application.DTOs;
-using LibraryAPI.Domain.Entities;
-using LibraryAPI.Domain.Interfaces;
+using LibraryAPI.Core.Entities;
+using LibraryAPI.Core.Interfaces;
 
 namespace LibraryAPI.Presentation.Controllers
 {

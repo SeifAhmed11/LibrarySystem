@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using LibraryAPI.Domain.Entities;
+using LibraryAPI.Core.Entities;
 
 namespace LibraryAPI.Infrastructure.Data
 {

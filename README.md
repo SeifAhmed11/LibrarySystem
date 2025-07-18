@@ -26,7 +26,7 @@ This project follows **Clean Architecture** principles with a well-structured la
 ├── 📁 Core/                    # Domain entities and business logic
 ├── 📁 Application/             # Use cases and application services
 ├── 📁 Infrastructure/          # Data access and external services
-└── 📁 WebAPI/                 # API controllers and presentation layer
+└── 📁 Presentation/            # API controllers and presentation layer
 ```
 
 <div align="center">

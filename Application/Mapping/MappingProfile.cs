@@ -1,5 +1,5 @@
 using AutoMapper;
-using LibraryAPI.Domain.Entities;
+using LibraryAPI.Core.Entities;
 using LibraryAPI.Application.DTOs;
 
 namespace LibraryAPI.Application.Mapping

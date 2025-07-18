@@ -1,8 +1,8 @@
 using AutoMapper;
 using LibraryAPI.Application.DTOs;
 using LibraryAPI.Application.Interfaces;
-using LibraryAPI.Domain.Entities;
-using LibraryAPI.Domain.Interfaces;
+using LibraryAPI.Core.Entities;
+using LibraryAPI.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryAPI.Application.Services

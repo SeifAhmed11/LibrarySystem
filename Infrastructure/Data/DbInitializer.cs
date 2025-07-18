@@ -1,4 +1,4 @@
-using LibraryAPI.Domain.Entities;
+using LibraryAPI.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryAPI.Infrastructure.Data

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using LibraryAPI.Infrastructure.Data;
-using LibraryAPI.Domain.Interfaces;
+using LibraryAPI.Core.Interfaces;
 using LibraryAPI.Infrastructure.Repositories;
 using LibraryAPI.Application.Interfaces;
 using LibraryAPI.Application.Services;

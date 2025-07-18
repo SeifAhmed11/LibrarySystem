@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace LibraryAPI.Domain.Entities
+namespace LibraryAPI.Core.Entities
 {
-    public class Author
+    public class Publisher
     {
         [Key]
         public int Id { get; set; }
@@ -12,6 +12,6 @@ namespace LibraryAPI.Domain.Entities
         public string Name { get; set; } = string.Empty;
         
         // Navigation Properties
-        public ICollection<BookAuthor> BookAuthors { get; set; } = new List<BookAuthor>();
+        public ICollection<Book> Books { get; set; } = new List<Book>();
     }
 } 
