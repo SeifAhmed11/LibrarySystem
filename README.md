@@ -36,7 +36,7 @@ This project follows **Clean Architecture** principles with a well-structured la
 │                    Clean Architecture                       │
 ├─────────────────────────────────────────────────────────────┤
 │  ┌─────────────────┐  ┌─────────────────┐  ┌──────────────┐ │
-│  │   Presentation  │  │   Application   │  │   Domain     │ │
+│  │   Presentation  │  │   Application   │  │   Core     │ │
 │  │     Layer       │  │     Layer       │  │   Layer      │ │
 │  │                 │  │                 │  │              │ │
 │  │ • Controllers   │  │ • Services      │  │ • Entities   │ │
