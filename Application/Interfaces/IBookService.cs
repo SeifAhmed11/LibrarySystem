@@ -9,7 +9,7 @@ namespace LibraryAPI.Application.Interfaces
         Task<BookDetailDto?> GetBookDetailsByIdAsync(int id);
         Task<BookDto> CreateBookAsync(CreateBookDto createBookDto);
         Task<BookDto> UpdateBookAsync(int id, UpdateBookDto updateBookDto);
-        Task DeleteBookAsync(int id);
+        Task DeleteBookAsync(int id); 
         Task<IEnumerable<BookDto>> GetBooksByAuthorAsync(int authorId);
         Task<IEnumerable<BookDto>> GetBooksByPublisherAsync(int publisherId);
         Task<IEnumerable<BookDto>> GetBooksByCategoryAsync(int categoryId);

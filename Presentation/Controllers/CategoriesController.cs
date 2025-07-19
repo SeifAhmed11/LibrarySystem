@@ -18,7 +18,7 @@ namespace LibraryAPI.Presentation.Controllers
             _categoryRepository = categoryRepository;
             _mapper = mapper;
         }
-
+ 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CategoryDto>>> GetCategories()
         {

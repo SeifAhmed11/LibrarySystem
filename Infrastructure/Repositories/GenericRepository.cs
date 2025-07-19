@@ -17,7 +17,7 @@ namespace LibraryAPI.Infrastructure.Repositories
 
         public async Task<T?> GetByIdAsync(object id)
         {
-            return await _dbSet.FindAsync(id);
+            return await _dbSet.FindAsync(id); 
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()
